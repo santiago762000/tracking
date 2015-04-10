@@ -1,0 +1,38 @@
+<style>
+    table.fixed {table-layout:fixed; width:90px;}/*Setting the table width is important!*/
+    table.fixed td {overflow:hidden;}/*Hide text outside the cell.*/
+    table.fixed td:nth-of-type(1) {width:420px;}/*Setting the width of column 1.*/
+    table.fixed td:nth-of-type(2) {width:480px;word-wrap:break-word;}/*Setting the width of column 2.*/
+
+</style>
+
+<div align="center">
+<table border="0">
+
+    <tr>
+        <td align="center" colspan="2">
+            {{displayData.incidentType}}<br/>
+            <img src="img/{{displayData.icon}}">
+            <br/><br/>
+        </td>
+    </tr>
+    <tr>
+        <td>Place:</td>
+        <td>{{displayData.place}}</td>
+    </tr>
+    <tr>
+        <td>Issue:</td>
+        <td>{{displayData.issue}}</td>
+    </tr>
+    <tr>
+        <td>Date:</td>
+        <td>{{displayData.date | date:'medium'}}</td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <textarea readonly cols='40' rows='10' style='border: none;color: white; background-color: transparent;resize: none;'>{{displayData.moreInfo}}</textarea>
+    </td>
+    </tr>
+</table>
+<img src='img/close.png' onclick='modal.hide();'/>
+</div>
